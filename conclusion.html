@@ -41,19 +41,19 @@
           <a class="brand" href="./index.html">RLO</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="active">
+              <li>
                 <a href="./index.html">Overview</a>
               </li>
-              <li>
+              <li class="">
                 <a href="./installing.html">Installing jQuery</a>
               </li>
               <li class="">
                 <a href="./selectors.html">jQuery Selectors</a>
               </li>
               <li class="">
-                <a href="./event.html">jQuery Events</a>
+                <a href="./events.html">jQuery Events</a>
               </li>   
-              <li class="">
+              <li class="active">
                 <a href="./conclusion.html">Conclusion</a>
               </li>                            
             </ul>
@@ -67,51 +67,64 @@
       <!-- Masthead
       ================================================== -->
       <header class="jumbotron subhead" id="overview">
-        <h1>RLO: Reusable Learning Objects</h1>
+        <h1>Conclusion</h1>
         <p class="lead">
-        	This website was created as a school project on RLO or reusable learning objects. Its purpose is to teach basic jQuery features such as         	 
+          
         </p>        
-        <ul>
-        	<li>
-        		<a href="./installing.html">Installing jQuery on your next web project</a>
-        	</li>
-        	<li>
-        		<a href="./selectors.html">Selecting elements with jQuery selectors</a>
-        	</li>
-        	<li>
-        		<a href="./events.html">Binding behaviors to elements</a>
-        	</li>
-        	<li>
-        		<a href="./animation.html">Adding animation</a>
-        	</li>        	
-        </ul>
+        <div class="subnav">
+          <ul class="nav nav-pills">
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#bindToEvent">Bind to an event</a></li>
+            <li><a href="#customEvent">Create custom event</a></li>               
+            <li><a href="#conclusion">Conclusion</a></li>
+          </ul>
+        </div>
       </header>
 
-	<!-- Layouts (Default and fluid)
-	================================================== -->
-	<section id="layouts">
-      <div class="row">
-        <div class="span12">
-          jQuery is a powerful, lightweight JavaScript library that enables rapid web development.  
-          “jQuery achieves this goal by making common, repetitive, tasks, stripping out all the unnecessary markup, and leaving them short, smart and understandable”.  
-          In addition, it provides beautiful effects and animations that will make your website more interactive, intuitive, and alive. 
-          Lastly, jQuery is CSS3 compliant and is cross-browser compatible.
-          <br/><br/>
-          That has been said, lets jump into the tutorial and discover how you can integrate jQuery into your next web project.
-        </div><!-- /.span -->
-      </div>
-	</section>
-  
-    <section id="lessonNavigation">
-      <div class="row">
-        <div class="span6">
-        <a href="./installing.html" class="btn">Start Now</a>
-        </div><!-- /.span -->
-      </div><!-- /.row -->      
-    </section>
+      <section id="intro">
+        <div class="page-header">
+          <h1>Introduction</h1>
+        </div>
+        <div class="row12">          
+          <p>
+            jQuery library is one of the most widely used javascript libraries.  It includes many different utilities that helps developers
+            speed up their development time, create interactive websites, easy to use and highly extensible.
+            <br/><br/>
+            In addition to the different topics addressed in this tutorial there are many other jQuery features and plugins that developers can 
+            integrate to their web application.                         
+          </p>
+          <ul>
+            <li>
+              <b>Animation and effects:</b> jQuery comes with a nice toolbox of animation utilities. More information on these utilities can be found at <a href="http://api.jquery.com/category/effects/">http://api.jquery.com/category/effects/</a>            
+            </li>
+            <li>
+              <b>Ajax utilities:</b> Modern web applications utilized Ajax methodology to make web applications more interactive. They achieved these interactivity by creating asynchronous calls to the server to fetch and render data. This methodology prevents
+            a full refresh of the web page thus allowing the users to have better interaction with the application. In addition, this methodology put less stress on the server because only a subset of the page need to be refresh. More information on Ajax support
+            can be found at <a href="http://api.jquery.com/category/ajax/">http://api.jquery.com/category/ajax/</a> 
+            </li>
+            <li>
+              <b>Widgets:</b> jQuery and its opensource community has created a nice set of widgets that developers can integrate into their web application.  Widgets such as <b>Calendar</b>, <b>Lightbox</b>, <b>Sliders</b>, etc can be found at <a href="http://jqueryui.com/">jQueryUI</a>.              
+            </li>
+            <li>
+              <b>Theming:</b> In addition to the different widgets that developers can use jQuery also provides a set of themes that would instantly change the look and feel of your web application.  More information can be found at <a href="http://jqueryui.com/themeroller/">jQuery Theme</a>.
+            </li>
+          </ul>          
+        </div>
+        
+      </section>                  
+
+      <!-- Layouts (Default and fluid)
+      ================================================== -->
+      <section id="layouts">      
+        <div class="row">
+          <div class="span6">
+      		<a href="./event.html" class="btn">Back</a>      		
+          </div><!-- /.span -->
+        </div><!-- /.row -->
+      </section>
 
 
-     <!-- Footer
+      <!-- Footer
       ================================================== -->
       <footer class="footer">
         <p class="pull-right"><a href="#">Back to top</a></p>       
@@ -137,5 +150,6 @@
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
     <script src="assets/js/application.js"></script>
+    <script src="assets/js/rlo.js"></script>
   </body>	
 </html>

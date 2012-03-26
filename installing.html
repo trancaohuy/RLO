@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>RLO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+
+  <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="./index.html">RLO</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li>
+                <a href="./index.html">Overview</a>
+              </li>
+              <li class="active">
+                <a href="./installing.html">Installing jQuery</a>
+              </li>
+              <li class="">
+                <a href="./selectors.html">jQuery Selectors</a>
+              </li>
+              <li class="">
+                <a href="./event.html">jQuery Events</a>
+              </li>   
+              <li class="">
+                <a href="./conclusion.html">Conclusion</a>
+              </li>                            
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- Masthead
+      ================================================== -->
+      <header class="jumbotron subhead" id="overview">
+        <h1>Installing jQuery</h1>
+        <p class="lead">
+          
+        </p>        
+        <div class="subnav">
+          <ul class="nav nav-pills">
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#local">Use local copy</a></li>
+            <li><a href="#cdn">Use CDN</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>              
+          </ul>
+        </div>
+      </header>
+
+      <section id="intro">
+        <div class="page-header">
+          <h1>Introduction</h1>
+        </div>
+        <div class="row12">          
+          <p>
+            jQuery library comes in two formats, compressed and non-compressed.  The compressed version is smaller in size thus faster to download.  This version is recommended for production ready web application.
+            On the other hand the uncompressed version is larger and it is good for debugging your web application.
+          </p>
+          <p>
+            jQuery library can be integrated into your web application via the <code>&lt;script&gt;</code> html tag.  
+            You can either use a local copy of the jQuery library, downloadable from <a href="http://docs.jquery.com/Downloading_jQuery">www.jquery.com</a> or reference to one of the available CDNs. 
+          </p>
+        </div>
+      </section>
+            
+      <section id="local">
+        <div class="page-header">
+          <h1>Use Local Copy</h1>
+        </div>
+        <div class="row12">
+          <p>
+            - To use a local copy of the jQuery library you need to visit <a href="http://docs.jquery.com/Downloading_jQuery">www.jquery.com</a> and either download the <b>minified (compressed version)</b> or the <b>uncompressed</b> version.            
+          </p>
+          <p>
+            - Save the jQuery library into a folder/directory within your web application.  Make sure that this folder is accessible by everyone.  
+          </p>
+          <p>For example, below is a simple folder structure of a website application</p>
+          <div class="well" style="padding: 8px 0;">
+            <ul class="nav nav-list">
+              <li class="nav-header">Root HTdocs</li>
+              <li><a href="#">Applications</a></li>
+              <li><a href="#">css</a></li>
+              <li><a href="#">images</a></li>
+              <li class="active">
+                <a href="#">javascript</a>
+                <ul class="nav nav-list">
+                  <li><code>jquery-1.7.1.min.js</code></li>
+                  <li><code>jquery-1.7.1.js</code></li>
+                </ul>
+              </li>              
+              <li><a href="#">index.html</a></li>                            
+            </ul>
+          </div>
+          <p>
+            - From your web application add a <code>&lt;script&gt;</code> html tag and refers its <code>src</code> attribute to the jQuery library.            
+          </p>          
+<pre class="prettyprint linenums">
+  &lt;!DOCTYPE html&gt;
+  &lt;html lang="en"&gt;
+    ...
+    &lt;script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"&gt;&lt;/script&gt;
+    ...
+  &lt;/html&gt;
+</pre>
+        </div>
+      </section>
+      
+      <section id="cdn">
+        <div class="page-header">
+          <h1>Use CDN</h1>
+        </div>        
+        <div class="row12">          
+          <p>
+            - CDN is also known as <b>content delivery network</b>.  "It is a large distributed system of servers deployed in multiple data centers in the Internet".
+            The purpose of using a CDN hosted solution is because its high availability and high performance.
+          </p>
+          <p>
+            - Some of the common hosted jQuery CDN solutions are              
+          </p>
+          <ul class="nav-list">
+            <li>
+              Google CDN: <a href="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js</a>
+            </li>
+            <li>
+              Microsoft CDN: <a href="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js">http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js</a>
+            </li>
+            <li>
+              jQuery CDN: <a href="http://code.jquery.com/jquery-1.7.2.min.js">http://code.jquery.com/jquery-1.7.2.min.js</a>
+            </li>
+          </ul>
+          <p>
+            - More information on other hosted CDN solutions could be found at <a href="http://www.cdncatalog.com/">http://www.cdncatalog.com/</a>
+          </p>
+          <p>
+            - From your web application add a <code>&lt;script&gt;</code> html tag and refers its <code>src</code> attribute to the hosted CDN jQuery library.            
+          </p>          
+<pre class="prettyprint linenums">
+  &lt;!DOCTYPE html&gt;
+  &lt;html lang="en"&gt;
+    ...
+    &lt;script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"&gt;&lt;/script&gt;
+    ...
+  &lt;/html&gt;
+</pre>
+        </div>      
+      </section>
+      <section id="conclusion">
+        <div class="page-header">
+          <h1>Conclusion</h1>
+        </div>
+        <div class="row12">          
+          <p>
+            - Once you have added jQuery library to your web application you can now manipulate your web application using jQuery.  Below are some useful resources on jQuery library.             
+          </p>          
+          <ul>
+            <li><a href="http://docs.jquery.com/Tutorials">jQuery Tutorials</a></li>
+            <li><a href="http://api.jquery.com/">jQuery API</a></li>
+            <li><a href="http://docs.jquery.com/Alternative_Resources">Alternatives Resources</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Layouts (Default and fluid)
+      ================================================== -->
+      <section id="layouts">      
+        <div class="row">
+          <div class="span6">
+      		<a href="./index.html" class="btn">Back</a>
+      		<a href="./selectors.html" class="btn">Jquery Selectors</a>
+          </div><!-- /.span -->
+        </div><!-- /.row -->
+      </section>
+
+
+      <!-- Footer
+      ================================================== -->
+      <footer class="footer">
+        <p class="pull-right"><a href="#">Back to top</a></p>       
+      </footer>
+
+    </div><!-- /container -->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/google-code-prettify/prettify.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/application.js"></script>
+  </body>	
+</html>

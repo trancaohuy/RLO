@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>RLO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+
+  <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="./index.html">RLO</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li>
+                <a href="./index.html">Overview</a>
+              </li>
+              <li class="">
+                <a href="./installing.html">Installing jQuery</a>
+              </li>
+              <li class="">
+                <a href="./selectors.html">jQuery Selectors</a>
+              </li>
+              <li class="active">
+                <a href="./events.html">jQuery Events</a>
+              </li>   
+              <li class="">
+                <a href="./conclusion.html">Conclusion</a>
+              </li>                            
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- Masthead
+      ================================================== -->
+      <header class="jumbotron subhead" id="overview">
+        <h1>jQuery events</h1>
+        <p class="lead">
+          
+        </p>        
+        <div class="subnav">
+          <ul class="nav nav-pills">
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#bindToEvent">Bind to an event</a></li>
+            <li><a href="#customEvent">Create custom event</a></li>               
+            <li><a href="#conclusion">Conclusion</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <section id="intro">
+        <div class="page-header">
+          <h1>Introduction</h1>
+        </div>
+        <div class="row12">          
+          <p>
+            When it comes to handling and triggering events jQuery provides great utilities for this. It allows developers to bind to elements' events
+            as well create and manage new custom events.  In this tutorial we will take a look at some basic features that jQuery offers.
+          </p>          
+        </div>
+        
+      </section>
+            
+      <section id="bindToEvent">
+        <div class="page-header">
+          <h1>Bind to an event</h1>
+        </div>
+        <div class="row12">          
+          <p>
+            jQuery utilized a generic method to <code>bind</code> a handler function to an event.  This allows developers to subscribe a handler to an element's events 
+            to create a dynamic web application.
+          </p>
+          <p>
+            To bind a handler to an event you will need to identify a number of elements
+            <ul>
+              <li>Identify which element you would like to query against</li>
+              <li>The name of the element's event you would like to bind a handler</li>
+              <li>Identify what your handler will do when it catches an event</li>
+            </ul>
+          </p>          
+          <p>
+            For example: To bind to a <code>click</code> event of an <code>&lt;a&gt;</code> tag we would query the element and use the <code>bind</code>
+            function to assign a handler to a particular event.
+          </p>
+<pre class="prettyprint linenums">
+  $('a.myATag').bind('click',
+  function(){
+    alert('myATag triggers a click event');
+  });
+</pre>          
+          <p>
+            The above example illustrates the following
+            <ul>
+              <li>
+                We query all <code>&lt;a&gt;</code> elements with a <code>class</code> attribute equals to <code>myATag</code>
+              </li>
+              <li>
+                Next we <code>bind</code> to the element's <code>click</code> event
+              </li>
+              <li>
+                We then assigned a handler as the second parameter of the <code>bind</code> method.  This handler will <code>alert</code> a message
+                into the browser.
+              </li>
+            </ul>
+          </p>
+        </div>
+        <div class="row">
+          <div class="span12">
+            <h2>Practice</h2>
+            <div class="row">
+              <div class="span6">
+                <h3>Sandbox <small>Click on the <b>Test Now</b> button and click on each of the three links</small></h3>
+                <div class="mini-layout sandbox">
+                  <div class="sandbox-code">
+                    <textarea>$('a.myATag').bind('click',
+  function(){
+    alert('myATag triggers a click event');
+    return false;
+  });</textarea>
+                  </div>
+                  <div class="sandbox-result"></div>
+                  <div class="sandbox-buttons">
+                    <button class="btn btn-primary btn-test-sandbox">Test Now</button>
+                  </div>
+                </div>
+              </div><!-- /.span -->
+                              
+              <div class="span6">
+                <h3>Test Document</h3>                
+                <div class="mini-layout sandbox">
+                  <div class="code-markup">
+<pre class="prettyprint linenums">
+  &lt;div class="actual-markup"&gt;
+    &lt;div&gt;&lt;a href="" class="myATag"&gt;First tag&lt;/a&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;a href="" class="myATag"&gt;Second tag&lt;/a&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;a href="" class="myATag"&gt;Third tag&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+</pre>
+                  </div>
+                  <div class="actual-markup">
+                    <div><a href="" class="myATag">First tag</a></div>
+                    <div><a href="" class="myATag">Second tag</a></div>
+                    <div><a href="" class="myATag">Third tag</a></div>
+                  </div>
+                </div>
+              </div><!-- /.span -->
+            </div><!-- /.row -->   
+          </div>                    
+        </div>        
+        <div class="row">
+          <div class="span12">
+            <h2>Explanation</h2>
+            <p>
+              The snippet above illustrated how we can bind a handler to an HTML element's event. We first queries for all <code>&lt;a&gt;</code>
+              element with a <code>class</code> attribute equal to <code>myATag</code>.
+              <br/><br/>
+              We then bind each element <code>click</code> event to a custom handler. This custom handler creates a message box with the text
+              "myATag triggers a click event".  Lastly, we run the <code>return false;</code> to override the element's normal behavior.  
+            </p>
+            <p>
+              There are many other element events that you could bind a handler with. Some of the most used events are <code>click</code>, <code>focus</code>, <code>blur</code>, etc.
+              More information could be find at <a href="http://api.jquery.com/category/events/">http://api.jquery.com/category/events/</a>              
+            </p>
+            <p>For our purpose the console below the text-area will display all the elements that match the specified selector</p>
+          </div>
+        </div>
+      </section>
+                    
+      <section id="customEvent">
+        <div class="page-header">
+          <h1>Creating custom event</h1>
+        </div>
+        <div class="row12">          
+          <p>
+            One of the most powerful features of jQuery and tend to be the forgotten one is the ability to create custom event. With this feature
+            developers can create and consume custom events or build custom plugins that require the process of publish and subscribe events.       
+          </p>          
+          <p>
+            To create a simple custom event you will need to tell jQuery that you want to create an event. With this <code>event</code> object you could
+            bind to a HTML element and publish the event on its behalf.
+          </p>
+          <p>
+<pre class="prettyprint linenums">
+//Create a custom event
+var myCustomEvent = jQuery.Event('customEvent');
+
+// fires the custom event
+jQuery("myElement").trigger(myCustomEvent);  
+</pre>               
+          </p>
+        </div>
+        <div class="row">
+          <div class="span12">
+            <h2>Practice</h2>
+            <div class="row">
+              <div class="span6">
+                <h3>Sandbox <small>Click on the <b>Test Now</b> button and click on the test button</small></h3>
+                <div class="mini-layout sandbox">
+                  <div class="sandbox-code">
+                    <textarea isComplex="true">//Create a custom event
+var myCustomEvent = jQuery.Event('customEvent');
+ 
+$('#testButton').bind('click', function(){
+  $(this).trigger(myCustomEvent);
+});
+
+$('#testButton').bind('customEvent', function(){
+  alert('custom event has been triggered');
+});
+  </textarea>
+                  </div>
+                  <div class="sandbox-result"></div>
+                  <div class="sandbox-buttons">
+                    <button class="btn btn-primary btn-test-sandbox">Test Now</button>
+                  </div>
+                </div>
+              </div><!-- /.span -->
+                              
+              <div class="span6">
+                <h3>Test Document</h3>                
+                <div class="mini-layout sandbox">
+                  <div class="code-markup">
+<pre class="prettyprint linenums">
+&lt;button id="testButton"&gt;Test Button&lt;/button&gt;
+</pre>
+                  </div>
+                  <div class="actual-markup">
+                    <button id="testButton">Test Button</button>
+                  </div>
+                </div>
+              </div><!-- /.span -->
+            </div><!-- /.row -->   
+          </div>                    
+        </div>        
+        <div class="row">
+          <div class="span12">
+            <h2>Explanation</h2>
+            <p>
+              In this example, we first create a custom event called <code>customEvent</code>. To simulate the trigger of the custom event
+              we bind the <code>testButton</code> button <code>click</code> event to trigger our custom event.
+              <br/><br/>
+              Next we bind to our custom event to demonstrate that our <code>customEvent</code> has been triggered.
+            </p>
+            <p>For our purpose the console below the text-area will display all the elements that match the specified selector</p>
+          </div>
+        </div>          
+      </section>
+      
+      <section id="conclusion">
+        <div class="page-header">
+          <h1>Conclusion</h1>
+        </div>
+        <div class="row12">          
+          <p>
+            jQuery has an easy to use, extensible, and scalable library that works with events.  It allows you to bind your custom handler code
+            to an event with a line of code.  In addition, it makes creating and consuming custom events a joy to code.
+            More information on jQuery events could be found at <a href="http://api.jquery.com/category/events/">http://api.jquery.com/category/events/</a> 
+          </p> 
+        </div>
+      </section>
+
+      <!-- Layouts (Default and fluid)
+      ================================================== -->
+      <section id="layouts">      
+        <div class="row">
+          <div class="span6">
+      		<a href="./selectors.html" class="btn">Back</a>
+      		<a href="./conclusion.html" class="btn">Conclusion</a>
+          </div><!-- /.span -->
+        </div><!-- /.row -->
+      </section>
+
+
+      <!-- Footer
+      ================================================== -->
+      <footer class="footer">
+        <p class="pull-right"><a href="#">Back to top</a></p>       
+      </footer>
+
+    </div><!-- /container -->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/google-code-prettify/prettify.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/application.js"></script>
+    <script src="assets/js/rlo.js"></script>
+  </body>	
+</html>

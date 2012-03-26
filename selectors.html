@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>RLO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+
+  <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="./index.html">RLO</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li>
+                <a href="./index.html">Overview</a>
+              </li>
+              <li class="">
+                <a href="./installing.html">Installing jQuery</a>
+              </li>
+              <li class="active">
+                <a href="./selectors.html">jQuery Selectors</a>
+              </li>
+              <li class="">
+                <a href="./event.html">jQuery Events</a>
+              </li>   
+              <li class="">
+                <a href="./conclusion.html">Conclusion</a>
+              </li>                            
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- Masthead
+      ================================================== -->
+      <header class="jumbotron subhead" id="overview">
+        <h1>jQuery selectors</h1>
+        <p class="lead">
+          
+        </p>        
+        <div class="subnav">
+          <ul class="nav nav-pills">
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#elementID">On an element ID</a></li>
+            <li><a href="#elementClass">On element's class attribute</a></li> 
+            <li><a href="#cssElement">On CSS elements</a></li>                   
+            <li><a href="#elementAttribute">On element's attribute</a></li>        
+            <li><a href="#elementTags">On HTML elements</a></li>   
+            <li><a href="#conclusion">Conclusion</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <section id="intro">
+        <div class="page-header">
+          <h1>Introduction</h1>
+        </div>
+        <div class="row12">          
+          <p>
+            At the core of jQuery is its abstraction layer for querying elements and objects within an HTML document.  Using jQuery developers could select one or more DOM elements using either 
+            the <code>jQuery('selector'[, context])</code> syntax or the shortcut syntax <code>$('selector'[, context])</code> and manipulate the elements with a couple of lines of code.
+          </p>
+          <p>
+            Both methods required that the <small>selector</small> is either                         
+          </p>          
+          <div class="span12">
+              <b>a string selector</b>
+              <br/>
+              <b>an object</b>
+              <br/>
+              <b>an HTML element</b>
+              <br/>
+              <b>an array</b>
+              <br/>
+              <b>jQuery object</b>
+          </div>
+          <p>
+            The <small>context</small> object refers to the context where jQuery should query for the elements from.  The default value for this object is the HTML document. 
+            Other values that can be use for the <small>context</small> object are
+          </p>
+          <div class="span12">
+          	<b>a string selector</b>
+            <br/>
+            <b>an object</b>
+            <br/>
+            <b>an HTML element</b>
+            <br/>
+            <b>jQuery object</b>
+          </div>
+          <p>
+            In this tutorial we will discuss a number of ways developers could use to select DOM elements from an HTML document.
+          </p>
+        </div>
+        
+      </section>
+            
+      <section id="elementID">
+        <div class="page-header">
+          <h1>Selectors on an element ID</h1>
+        </div>
+        <div class="row12">          
+          <p>
+            Each HTML elements could be assigned with a unique ID via the <code>id</code> attribute.  It is this value that uniquely identifies the element within a HTML document.
+          </p>
+          <p>
+            For example: <code>&lt;div id="myID"&gt;Hello world&lt;/div&gt;</code>
+          </p>
+          <p>  
+            To query an element with a particular <b>id</b> in jQuery we use the following syntax
+            <br/><br/>
+            <code>$('#elementID')</code>
+            <br/><br/>
+            The selector value here is a string that composed of a hash value <code>#</code> follows by the id of the element you are querying.
+            <br/><br/>
+            For example: <code>$('#myID')</code>   
+          </p>
+          <p>
+            The result of the query will be an array of elements that matches the selectors.
+          </p>
+        </div>
+        <div class="row">
+          <div class="span12">
+            <h2>Practice</h2>
+            <div class="row">
+              <div class="span6">
+                <h3>Sandbox <small>Update the value in the textarea and click on the <b>Test Now</b> button</small></h3>
+                <div class="mini-layout sandbox">
+                  <div class="sandbox-code">
+                    <textarea>$('#lesson1-id-selector');</textarea>
+                  </div>
+                  <div class="sandbox-result"></div>
+                  <div class="sandbox-buttons">
+                    <button class="btn btn-primary btn-test-sandbox">Test Now</button>
+                  </div>
+                </div>
+              </div><!-- /.span -->
+                              
+              <div class="span6">
+                <h3>Test Document</h3>                
+                <div class="mini-layout sandbox">
+                  <div class="code-markup">
+<pre class="prettyprint linenums">
+  &lt;div class="actual-markup"&gt;
+    &lt;div id="lesson1-id-selector"&gt;Hello world&lt;/div&gt;
+  &lt;/div&gt;
+</pre>
+                  </div>
+                  <div class="actual-markup">
+                    <div id="lesson1-id-selector">Hello world</div>
+                  </div>
+                </div>
+              </div><!-- /.span -->
+            </div><!-- /.row -->   
+          </div>                    
+        </div>        
+        <div class="row">
+          <div class="span12">
+            <h2>Explanation</h2>
+            <p>The selector above queries all the elements with an <code>id</code> value of <code>lesson1-id-selector</code></p>
+            <p>For our purpose the console below the text-area will display all the elements that match the specified selector</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="elementClass">
+        <div class="page-header">
+          <h1>Selectors on Element's Class Attribute</h1>
+        </div>
+        <div class="row12">          
+          <p>
+            With CSS developers were able to template their website thus allowing them to reuse their code as well adopt a consistent look and feel.
+            To do this we assign HTML elements with a class value.  From there developers could declare a look and feel for a particular class in the css file.             
+          </p>
+          <p>
+            For example: <code>&lt;div class="successMessage"&gt;Transaction completed successfully !!!&lt;/div&gt;</code>
+          </p>
+          <p>  
+            In order for developers to retain this consistency once the page has been rendered jQuery provides a selector mechanism that queries all the elements
+            using the class attribute.
+            <br/><br/>
+            To query all elements with a particular <b>class</b> in jQuery we use the following syntax
+            <br/><br/>
+            <code>$('.classValue')</code>
+            <br/><br/>
+            The selector value here is a string that composed of a period <code>.</code> follows by the class value.
+            <br/><br/>
+            For example: <code>$('.successMessage')</code>   
+          </p>
+          <p>
+            The result of the query will be an array of elements that matches the selectors.
+          </p>
+        </div>
+        <div class="row">
+          <div class="span12">
+            <h2>Practice</h2>
+            <div class="row">
+              <div class="span6">
+                <h3>Sandbox <small>Update the value in the textarea and click on the <b>Test Now</b> button</small></h3>
+                <div class="mini-layout sandbox">
+                  <div class="sandbox-code">
+                    <textarea>$('.successMessage').css('background-color', 'orange');</textarea>
+                  </div>
+                  <div class="sandbox-result"></div>
+                  <div class="sandbox-buttons">
+                    <button class="btn btn-primary btn-test-sandbox">Test Now</button>
+                  </div>
+                </div>
+              </div><!-- /.span -->
+                              
+              <div class="span6">
+                <h3>Test Document</h3>                
+                <div class="mini-layout sandbox">
+                  <div class="code-markup">
+<pre class="prettyprint linenums">
+  &lt;div class="actual-markup"&gt;
+    &lt;div class="successMessage"&gt;First element&lt;/div&gt;
+    &lt;div class="successMessage"&gt;Second element&lt;/div&gt;
+    &lt;div class="successMessage"&gt;Third element&lt;/div&gt;
+  &lt;/div&gt;
+</pre>
+                  </div>
+                  <div class="actual-markup">
+                    <div class="successMessage">First element</div>
+                    <div class="successMessage">Second element</div>
+                    <div class="successMessage">Third element</div>
+                  </div>
+                </div>
+              </div><!-- /.span -->
+            </div><!-- /.row -->   
+          </div>                    
+        </div>        
+        <div class="row">
+          <div class="span12">
+            <h2>Explanation</h2>
+            <p>
+              The selector above queries all the elements with a <code>class</code> value of <code>successMessage</code>.
+              The elements returned from the query get its <code>background-color</code> change to <code>orange</code>
+            </p>
+            <p>For our purpose the console below the text-area will display all the elements that match the specified selector</p>
+          </div>
+        </div>        
+      </section>
+            
+      <section id="cssElement">
+        <div class="page-header">
+          <h1>Selectors on CSS Element</h1>
+        </div>
+        <div class="row12">          
+          <p>
+            jQuery also has the ability to select elements that match a particular CSS attribute.  Although, it doesn't provide an abstraction method for this we could utilize
+            jQuery <b>filter</b> method to achieve this behavior.
+          </p>
+          <p>
+            For example: <code>&lt;div style="font-size: 10px;"&gt;Transaction completed successfully !!!&lt;/div&gt;</code>
+          </p>
+          <p>  
+            To query all elements with a CSS font-size of 10 pixels we would use the syntax below
+            <br/><br/>
+            <code>
+              $('div').filter(function(){
+                    
+                      return $(this).css('font-size') == '10px'                      
+                    
+                    })
+            </code>
+            <br/><br/>
+            The syntax specified above instructed jQuery to retrieve all <code>div</code> elements within the <code>actual-markup</code> container
+            and return a subset of the result base on the element's CSS font-size attribute.
+          </p>
+          <p>
+            The result of the query will be an array of elements that matches the filter.
+          </p>
+        </div>
+        <div class="row">
+          <div class="span12">
+            <h2>Practice</h2>
+            <div class="row">
+              <div class="span6">
+                <h3>Sandbox <small>Update the value in the textarea and click on the <b>Test Now</b> button</small></h3>
+                <div class="mini-layout sandbox">
+                  <div class="sandbox-code">
+                    <textarea>$('div', '.actual-markup').filter(function(){
+                    
+                      return $(this).css('font-size') == '10px'                      
+                    
+                    }).css('background-color', 'orange');</textarea>
+                  </div>
+                  <div class="sandbox-result"></div>
+                  <div class="sandbox-buttons">
+                    <button class="btn btn-primary btn-test-sandbox">Test Now</button>
+                  </div>
+                </div>
+              </div>
+                              
+              <div class="span6">
+                <h3>Test Document</h3>                
+                <div class="mini-layout sandbox">
+                  <div class="code-markup">
+<pre class="prettyprint linenums">
+  &lt;div class="actual-markup"&gt;
+    &lt;div style="font-size: 10px"&gt;First element&lt;/div&gt;
+    &lt;div style="font-size: 10px"&gt;Second element&lt;/div&gt;
+    &lt;div&gt;Third element&lt;/div&gt;
+  &lt;/div&gt;
+</pre>
+                  </div>
+                  <div class="actual-markup">
+                    <div style="font-size: 10px;">First element</div>
+                    <div style="font-size: 10px">Second element</div>
+                    <div>Third element</div>
+                  </div>
+                </div>
+              </div>
+            </div>   
+          </div>                    
+        </div>        
+        <div class="row">
+          <div class="span12">
+            <h2>Explanation</h2>
+            <p>
+              The selector above queries all <code>div</code> elements, filter the result base on the CSS attribute <code>font-size</code> with a value of <code>10px</code>.
+              The elements returned from the query get its <code>background-color</code> change to <code>orange</code>
+            </p>
+            <p>For our purpose the console below the text-area will display all the elements that match the specified selector</p>
+          </div>
+        </div> 
+      </section>
+       
+      <section id="elementAttribute">
+        <div class="page-header">
+          <h1>Selectors on Element's Attribute</h1>
+        </div>
+        <div class="row12">          
+          <p>
+            In addition, jQuery supports the ability to query HTML elements base on the attribute's value            
+          </p>
+          <p>
+            For example: <code>&lt;div bindClass="myBindClass"&lt;/div&gt;</code>
+          </p>
+          <p>  
+            The syntax for such query is <code>$('[attribute="value"]')</code> where <code>attribute</code> refers to the attribute's name and <code>value</code>
+            refers to the attribute's value            
+          </p>
+          <p>  
+            To query all elements with an attribute name of <code>bindClass</code> and the attribute's value of <code>myBindClass</code> we would use the syntax below
+            <br/><br/>
+            <code>
+              $('[bindClass="myBindClass"]')
+            </code>            
+          </p>
+          <p>
+            The result of the query will be an array of elements that matches the selectors.
+          </p>
+        </div>
+        <div class="row">
+          <div class="span12">
+            <h2>Practice</h2>
+            <div class="row">
+              <div class="span6">
+                <h3>Sandbox <small>Update the value in the textarea and click on the <b>Test Now</b> button</small></h3>
+                <div class="mini-layout sandbox">
+                  <div class="sandbox-code">
+                    <textarea>$('[bindClass="myBindClass"]').css('background-color', 'green');</textarea>
+                  </div>
+                  <div class="sandbox-result"></div>
+                  <div class="sandbox-buttons">
+                    <button class="btn btn-primary btn-test-sandbox">Test Now</button>
+                  </div>
+                </div>
+              </div><!-- /.span -->
+                              
+              <div class="span6">
+                <h3>Test Document</h3>                
+                <div class="mini-layout sandbox">
+                  <div class="code-markup">
+<pre class="prettyprint linenums">
+  &lt;div class="actual-markup"&gt;
+    &lt;div bindClass="myBindClass"&gt;First element&lt;/div&gt;
+    &lt;div bindClass="myBindClass"&gt;Second element&lt;/div&gt;
+    &lt;div&gt;Third element&lt;/div&gt;
+  &lt;/div&gt;
+</pre>
+                  </div>
+                  <div class="actual-markup">
+                    <div bindClass="myBindClass">First element</div>
+                    <div bindClass="myBindClass">Second element</div>
+                    <div>Third element</div>
+                  </div>
+                </div>
+              </div><!-- /.span -->
+            </div><!-- /.row -->   
+          </div>                    
+        </div>        
+        <div class="row">
+          <div class="span12">
+            <h2>Explanation</h2>
+            <p>
+              The selector above queries all HTML attribute with a name of <code>bindClass</code> and a value of <code>myBindClass</code>. The elements returned from 
+              the query get its <code>background-color</code> change to <code>green</code>
+            </p>
+            <p>For our purpose the console below the text-area will display all the elements that match the specified selector</p>
+          </div>
+        </div>         
+      </section>
+      
+      <section id="elementTags">
+        <div class="page-header">
+          <h1>Selectors on HTML tag</h1>
+        </div>
+        <div class="row12">          
+          <p>
+            Lastly, jQuery provides the support to query elements base on its HTML tags.       
+          </p>
+          <p>
+            For example: <code>&lt;p&gt;Test paragraph&lt;/p&gt;</code>
+          </p>
+          <p>  
+            The syntax for such query is <code>$('tagName')</code> where <code>tagName</code> refers to the element's tag name            
+          </p>
+          <p>  
+            To query all <code>p</code> elements we would use the syntax below
+            <br/><br/>
+            <code>
+              $('p')
+            </code>            
+          </p>
+          <p>
+            The result of the query will be an array of elements that matches the selectors.
+          </p>
+        </div>
+        <div class="row">
+          <div class="span12">
+            <h2>Practice</h2>
+            <div class="row">
+              <div class="span6">
+                <h3>Sandbox <small>Update the value in the textarea and click on the <b>Test Now</b> button</small></h3>
+                <div class="mini-layout sandbox">
+                  <div class="sandbox-code">
+                    <textarea>$('p', '.actual-markup').css('background-color', 'orange');</textarea>
+                  </div>
+                  <div class="sandbox-result"></div>
+                  <div class="sandbox-buttons">
+                    <button class="btn btn-primary btn-test-sandbox">Test Now</button>
+                  </div>
+                </div>
+              </div><!-- /.span -->
+                              
+              <div class="span6">
+                <h3>Test Document</h3>                
+                <div class="mini-layout sandbox">
+                  <div class="code-markup">
+<pre class="prettyprint linenums">
+  &lt;div class="actual-markup"&gt;
+    &lt;p&gt;First element&lt;/p&gt;
+    &lt;p&gt;Second element&lt;/p&gt;
+    &lt;div&gt;Third element&lt;/div&gt;
+  &lt;/div&gt;
+</pre>
+                  </div>
+                  <div class="actual-markup">
+                    <p>First element</p>
+                    <p>Second element</p>
+                    <div>Third element</div>
+                  </div>
+                </div>
+              </div><!-- /.span -->
+            </div><!-- /.row -->   
+          </div>                    
+        </div>        
+        <div class="row">
+          <div class="span12">
+            <h2>Explanation</h2>
+            <p>
+              The selector above queries all the elements with a tag name equal to <code>p</code>.
+              The elements returned from the query get its <code>background-color</code> change to <code>orange</code>
+            </p>
+            <p>For our purpose the console below the text-area will display all the elements that match the specified selector</p>
+          </div>
+        </div>          
+      </section>
+      
+      <section id="conclusion">
+        <div class="page-header">
+          <h1>Conclusion</h1>
+        </div>
+        <div class="row12">          
+          <p>
+            At the core of jQuery is its ability to simplify the process of querying DOM elements from a HTML document.  The tutorial above captures a subset of selectors functionalities that come with jQuery.
+            More information could be found at <a href="http://api.jquery.com/category/selectors/">http://api.jquery.com/category/selectors/</a> 
+          </p> 
+        </div>
+      </section>
+
+      <!-- Layouts (Default and fluid)
+      ================================================== -->
+      <section id="layouts">      
+        <div class="row">
+          <div class="span6">
+      		<a href="./installing.html" class="btn">Back</a>
+      		<a href="./event.html" class="btn">Jquery Events</a>
+          </div><!-- /.span -->
+        </div><!-- /.row -->
+      </section>
+
+
+      <!-- Footer
+      ================================================== -->
+      <footer class="footer">
+        <p class="pull-right"><a href="#">Back to top</a></p>       
+      </footer>
+
+    </div><!-- /container -->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/google-code-prettify/prettify.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/application.js"></script>
+    <script src="assets/js/rlo.js"></script>
+  </body>	
+</html>
